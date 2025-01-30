@@ -1,0 +1,89 @@
+[project]
+name = "stock-api"
+version = "0.0.1"
+description = "The stock api"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.20.0",
+    "alembic>=1.14.1",
+    "anyio>=4.8.0",
+    "bcrypt>=4.2.1",
+    "environs>=14.1.0",
+    "httptools>=0.6.4",
+    "httpx>=0.28.1",
+    "loguru>=0.7.3",
+    "pyjwt>=2.10.1",
+    "quart>=0.20.0",
+    "sqlalchemy>=2.0.37",
+    "typer>=0.15.1",
+    "uuid7>=0.1.0",
+    "uvicorn>=0.34.0",
+    "uvloop>=0.21.0",
+]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.6.10",
+    "pyright>=1.1.392.post0",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
+    "pytest-env>=1.1.5",
+    "pytest-sugar>=1.0.0",
+    "ruff>=0.9.3",
+]
+
+# -- Library configs -- #
+
+# Ruff Configs
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+extend-select = ["E501"]
+
+# Pytest configs
+[tool.pytest.ini_options]
+addopts = "-s -v --durations=5"
+markers = []
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+
+# Pytest-Env configs
+[tool.pytest_env]
+STOCK_API_ENVIRONMENT = "testing"
+
+# Coverage configs
+[tool.coverage.run]
+branch = false
+data_file = ".coverage/coverage"
+omit = [
+    "test/*",
+    "tests/*",
+    "venv/*",
+    ".venv/*",
+    "*migrations/*",
+    "*cli/*",
+    "*conftest.py",
+    "manage.py",
+]
+
+[tool.coverage.report]
+skip_covered = true
+precision = 2
+fail_under = 90
+exclude_also = ["if TYPE_CHECKING:", "@abstractmethod", "if _TypeChecking:"]
+
+[tool.coverage.html]
+directory = ".coverage/html-report"
+skip_covered = true
+
+# Pyright configs
+[tool.pyright]
+exclude = [".venv/", "venv/", "*/__pycache__/"]
+pythonVersion = "3.13"
+pythonPlatform = "Linux"
+venvPath = "./.venv"
+typeCheckingMode = "strict"
+reportUnusedImport = false

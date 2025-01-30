@@ -1,0 +1,15 @@
+marshmallow>=3
+factory_boy
+flask
+flask-httpauth
+flask-restful
+flask-migrate
+flask-sqlalchemy
+flask-marshmallow
+marshmallow-sqlalchemy
+passlib
+python-dotenv
+pytest
+pytest-flask
+pytest-runner
+pytest-factoryboy
