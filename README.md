@@ -163,10 +163,3 @@ $ make tests
 You should see something like the screenshot bellow after you run the command:
 
 ![log-screenshot](./.assets/asset2.png)
-
-## Video Link
-
-Bellow you can find the google driver folder to the code explanation as well instructions
-on how to run the project:
-
-[https://drive.google.com/drive/folders/17Habehsrlla67ajhTZ2ixyN3MTYomuu1?usp=sharing](https://drive.google.com/drive/folders/17Habehsrlla67ajhTZ2ixyN3MTYomuu1?usp=sharing)
